@@ -154,6 +154,7 @@ uint8_t zw101_ControlBLN(uint8_t featuer_code, uint8_t start_color, uint8_t end_
     }
         if (millis() - startTime >= timeout) {
         Serial.println("Timeout!"); // 超时处理
+        
         break;
     }
 }
