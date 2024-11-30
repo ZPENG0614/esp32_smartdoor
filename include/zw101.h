@@ -13,7 +13,4 @@ uint8_t zw101_ControlBLN(uint8_t featuer_code,uint8_t start_color,uint8_t end_co
 uint8_t zw101_waitForHandshake(uint32_t timeout);
 uint32_t zw101_PS_AutoEnroll(uint16_t ID,uint8_t entry_num,uint16_t parameter);
 uint8_t zw101_PS_AutoIdentify(uint8_t rating_fraction,uint16_t ID);
-
-
-
 #endif

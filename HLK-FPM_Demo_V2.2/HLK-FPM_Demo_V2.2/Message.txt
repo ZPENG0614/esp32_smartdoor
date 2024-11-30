@@ -1,0 +1,7 @@
+10:41:05:893<-- 1.Please press finger
+10:41:08:388<--2.Please press finger 
+10:41:09:914<--3.Please press finger 
+10:41:10:984<--4.Please press finger 
+10:41:12:170<--5.Please press finger 
+10:41:13:672<--PS_StoreChar OK
+<--Finger ID = 6
