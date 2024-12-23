@@ -1,3 +1,22 @@
+#ifndef zw101_hpp
+#define zw101_hpp
+#include <Arduino.h>
+#include <HardwareSerial.h>
+extern HardwareSerial mySerial; // 声明 mySerial 为 extern
+
+uint8_t zw101_GetEcho();
+uint8_t zw101_PS_HandShake();
+uint16_t zw101_checksum(uint8_t *pakcet,size_t len);
+uint8_t zw101_sendpack(uint8_t *packet,size_t len);
+uint8_t zw101_recivepack();
+uint8_t zw101_ControlBLN(uint8_t featuer_code,uint8_t start_color,uint8_t end_color,uint8_t cycle_time);
+uint8_t zw101_waitForHandshake(uint32_t timeout);
+uint32_t zw101_PS_AutoEnroll(uint16_t ID,uint8_t entry_num,uint16_t parameter);
+uint8_t zw101_PS_AutoIdentify(uint8_t rating_fraction,uint16_t ID);
+
+
+
+
 #include <HardwareSerial.h>
 
 HardwareSerial mySerial(2); // 创建硬件串口对象
@@ -18,7 +37,6 @@ uint8_t zw101_sendpack(uint8_t *packet, size_t len) {
         if (mySerial.write(packet[i]) == 1) {
             sentBytes++;
         } else {
-            Serial.println("Failed to send byte");
             return 0; // 发送失败
         }
     }
@@ -32,8 +50,6 @@ uint8_t zw101_receivepack() {
     if (mySerial.available() >= 12) { // 确保至少有12字节可读
         for (int i = 0; i < 12; i++) {
             receivedpack[i] = mySerial.read();
-            Serial.print(receivedpack[i], HEX);
-            Serial.print("  ");
             }
 
             // 校验数据包内容
@@ -151,3 +167,5 @@ uint8_t zw101_PS_AutoIdentify(uint8_t rating_fraction, uint16_t ID) {
     return response;
 }
 
+
+#endif
