@@ -4,7 +4,7 @@
 #include <HXCthread.hpp>
 #define SERVO_PIN 2        // 舵机连接引脚
 #define DEGREES 50        // 舵机旋转的最大角度
-#define DELAY_TIME 15      // 控制舵机移动的延时
+#define DELAY_TIME 100      // 控制舵机移动的延时
 
 
 Servo myservo;  // 创建一个舵机对象
