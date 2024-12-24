@@ -2,6 +2,8 @@
 #define zw101_hpp
 #include <Arduino.h>
 #include <HardwareSerial.h>
+#include <HXCthread.hpp>
+
 extern HardwareSerial mySerial; // 声明 mySerial 为 extern
 
 uint8_t zw101_GetEcho();
@@ -14,10 +16,6 @@ uint8_t zw101_waitForHandshake(uint32_t timeout);
 uint32_t zw101_PS_AutoEnroll(uint16_t ID,uint8_t entry_num,uint16_t parameter);
 uint8_t zw101_PS_AutoIdentify(uint8_t rating_fraction,uint16_t ID);
 
-
-
-
-#include <HardwareSerial.h>
 
 HardwareSerial mySerial(2); // 创建硬件串口对象
 
