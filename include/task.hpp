@@ -10,7 +10,6 @@ servo_func myservo_996r;
 uint8_t state;
 
 HXC::thread<void> zw101_thread([](){
-    myservo_996r.servo_setup();
     while(true){
         state = zw101_PS_AutoIdentify(0x02, 0xFFFF); // 自动识别指纹
         if (state == 1) {
