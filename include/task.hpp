@@ -9,6 +9,8 @@
 servo_func myservo_996r;
 uint8_t state;
 
+
+//创建指纹识别线程,执行对应的功能
 HXC::thread<void> zw101_thread([](){
     while(true){
         state = zw101_PS_AutoIdentify(0x02, 0xFFFF); // 自动识别指纹
@@ -19,6 +21,7 @@ HXC::thread<void> zw101_thread([](){
         delay(500);  
     }
 });
+
 
 //在这里创建一个网页的线程，并且执行相应的函数
 HXC::thread<void> web_thread([](){

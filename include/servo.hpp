@@ -9,7 +9,7 @@
 
 Servo myservo;  // 创建一个舵机对象
 
-
+//这个函数用于实现舵机的相关功能
 class servo_func{
     public:
     void servo_opendoor(){
